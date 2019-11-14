@@ -15,3 +15,7 @@ end
 get '/list' do
   "Where do you want to go?"
 end
+
+get '/cat' do
+  erb(:index)
+end
