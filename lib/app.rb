@@ -1,7 +1,5 @@
 require 'sinatra'
 
-
-
 get '/' do
   "Hello!"
 end
@@ -19,12 +17,11 @@ get '/list' do
 end
 
 get '/random-cat' do
-  @names = ["Jo", "Vincent", "Bob"].sample
+  @name = ["Jo", "Vincent", "Bob"].sample
   erb(:index)
 end
 
-get '/named-cat' do
-  p params
-  @names = params[:names]
+post '/named-cat' do
+  @name = params[:name]
   erb(:index)
 end
