@@ -18,7 +18,13 @@ get '/list' do
   "Where do you want to go?"
 end
 
-get '/cat' do
+get '/random-cat' do
   @names = ["Jo", "Vincent", "Bob"].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  p params
+  @names = params[:names]
   erb(:index)
 end
